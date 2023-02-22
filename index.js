@@ -1,2 +1,2 @@
-const CsharpWebpackPlugin = require('./lib/CsharpWebpackPlugin')
-module.exports = CsharpWebpackPlugin
+const CSharpWebpackPlugin = require('./lib/CSharpWebpackPlugin')
+module.exports = CSharpWebpackPlugin

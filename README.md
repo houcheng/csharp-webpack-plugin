@@ -47,6 +47,20 @@ module.exports = {
 };
 ```
 
+For vue project, add plugin to vue.config.js configuration file:
+
+```javascript
+const { defineConfig } = require('@vue/cli-service')
+const CsharpWebpackPlugin = require('csharp-webpack-plugin')
+
+module.exports = defineConfig({
+  transpileDependencies: true,
+  configureWebpack: config => {
+    config.plugins.push(new CsharpWebpackPlugin())
+  }
+})
+```
+
 
 
 When you run Webpack, the plugin will generate TypeScript interfaces and JavaScript wrapper functions for each of the types defined in your C# source code. For each "Xxx.cs" file, it generates "Xxx.ts" and "XxxWrappers.js" files.
@@ -64,16 +78,42 @@ The TypeScript interface is generated based on the public properties and methods
 
 
 
+Example Api.cs file:
+
+```c#
+using System;
+using System.Collections.Generic;
+using ActRegisterBase.Models;
+
+namespace ActRegister.Controllers.Types {
+    class PostLeavesStatistics {
+        public int Added { get; set; }
+        public int Modified { get; set; }
+        public int Deleted { get; set; }
+    }
+    public class GaMergedRegistration {
+        public  bool IsTeam { get; set; }
+        public GaRegistration Registration { get; set; }
+        public GameActivity Ga { get; set; }
+        public GaTeam Team { get; set; }
+    }
+}
+```
+
+
+
 Example output Api.ts:
 
 ```typescript
-// src\csharp\Api.cs
+import { GaRegistration } from "./Ref";
+import { GameActivity } from "./BaseType";
+import { GaTeam } from "./BaseType";
+
 export interface PostLeavesStatistics {
     Added: number;
     Modified: number;
     Deleted: number;
 }
-// src\csharp\Api.cs
 export interface GaMergedRegistration {
     IsTeam: boolean;
     Registration: GaRegistration;
@@ -81,6 +121,8 @@ export interface GaMergedRegistration {
     Team: GaTeam;
 }
 ```
+
+
 
 Example output ApiWrappers.js
 
@@ -91,10 +133,6 @@ export const toPostLeavesStatistics = (o) => (o)
 /** @returns {GaMergedRegistration} */
 export const toGaMergedRegistration = (o) => (o)
 ```
-
-
-
-
 
 
 

@@ -1,0 +1,5 @@
+csharp-models-to-json/bin
+csharp-models-to-json/obj/
+csharp-models-to-json/.idea/
+.idea/
+node_modules/
