@@ -1,8 +1,2 @@
-const CsLoaderPlugin = require('./CsLoaderPlugin')
-const csLoader = require("./CsLoader");
-
-module.exports = csLoader
-/* {
-    default: csLoader,
-    CsLoaderPlugin
-} */
+const CsLoaderPlugin = require('./lib/CsLoaderPlugin')
+module.exports = CsLoaderPlugin
