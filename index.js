@@ -1,2 +1,2 @@
-const CsLoaderPlugin = require('./lib/CsLoaderPlugin')
-module.exports = CsLoaderPlugin
+const CsharpWebpackPlugin = require('./lib/CsharpWebpackPlugin')
+module.exports = CsharpWebpackPlugin
