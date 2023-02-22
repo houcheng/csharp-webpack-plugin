@@ -18,7 +18,8 @@
   "author": "Houcheng Lin",
   "license": "ISC",
   "dependencies": {
-    "camelcase": "^6.0.0"
+    "camelcase": "^6.0.0",
+    "glob": "^8.1.0"
   },
   "devDependencies": {
     "@types/node": "^18.14.0",
