@@ -2,7 +2,20 @@
 
 This is a plugin for Webpack that generates TypeScript interfaces and JavaScript wrapper functions from C# source code. It is based on the [csharp-models-to-typescript](https://github.com/svenheden/csharp-models-to-typescript) library.
 
+## Prerequisites
+
+This plugin depends on .NET Core SDK.
+
+## Installation
+
+To install this plugin, run the following command:
+
+```bash
+npm i -D csharp-webpack-plugin
+```
+
 ## Usage
+
 To use this plugin, you must have .NET Core SDK installed on your system. You also need to create a csconfig.json file in the root of your project, with the following configuration:
 
 
