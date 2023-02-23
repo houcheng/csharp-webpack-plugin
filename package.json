@@ -1,6 +1,6 @@
 {
   "name": "csharp-webpack-plugin",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "This is a webpack plugin that converts csharp classes into typescript interfaces and javascript functions with jsdoc annotation for type checking for both javascript or typescript based projects.",
   "main": "index.js",
   "scripts": {
